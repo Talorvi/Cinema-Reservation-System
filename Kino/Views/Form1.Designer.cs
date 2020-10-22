@@ -1,4 +1,4 @@
-﻿namespace Kino
+﻿namespace Kino.Views
 {
     partial class Form1
     {
