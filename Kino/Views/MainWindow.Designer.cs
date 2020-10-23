@@ -1,6 +1,6 @@
 ﻿namespace Kino.Views
 {
-    partial class Form1
+    partial class MainWindow
     {
         /// <summary>
         /// Required designer variable.
@@ -29,18 +29,31 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.panelMain = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
-            // Form1
+            // panelMain
+            // 
+            this.panelMain.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelMain.Location = new System.Drawing.Point(0, 0);
+            this.panelMain.Name = "panelMain";
+            this.panelMain.Size = new System.Drawing.Size(800, 450);
+            this.panelMain.TabIndex = 0;
+            // 
+            // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Name = "Form1";
+            this.Controls.Add(this.panelMain);
+            this.Name = "MainWindow";
             this.Text = "Form1";
             this.ResumeLayout(false);
+
         }
 
         #endregion
+
+        private System.Windows.Forms.Panel panelMain;
     }
 }
