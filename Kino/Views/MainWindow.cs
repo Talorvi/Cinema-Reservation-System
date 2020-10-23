@@ -9,11 +9,12 @@ namespace Kino.Views
             InitializeComponent();
         }
 
-        public void ChangeWindow(Control control) 
+        private void ChangeWindow(AbstractChangingWindow window) 
         {
             this.Controls.Clear();
-            control.Dock = DockStyle.Fill;
-            this.Controls.Add(control);
+            window.Change_Window += ChangeWindow;
+            window.Dock = DockStyle.Fill;
+            this.Controls.Add(window);
         }
     }
 }

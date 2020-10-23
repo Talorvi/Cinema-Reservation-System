@@ -51,6 +51,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Utilities\AbstractControlDescriptionProvider.cs" />
+    <Compile Include="Views\AbstractChangingWindow.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Views\MainWindow.cs">
       <SubType>Form</SubType>
     </Compile>
