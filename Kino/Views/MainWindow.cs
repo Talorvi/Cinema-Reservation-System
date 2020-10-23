@@ -11,9 +11,9 @@ namespace Kino.Views
 
         public void ChangeWindow(Control control) 
         {
-            panelMain.Controls.Clear();
+            this.Controls.Clear();
             control.Dock = DockStyle.Fill;
-            panelMain.Controls.Add(control);
+            this.Controls.Add(control);
         }
     }
 }
