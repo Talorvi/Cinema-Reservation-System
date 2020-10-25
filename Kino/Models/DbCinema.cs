@@ -10,5 +10,7 @@ namespace Kino.Models
         public DbCinema() : base("Cinema") { }
         public ITable<Movie> Movies => GetTable<Movie>();
         public ITable<Hall> Halls => GetTable<Hall>();
+        public ITable<Role> Roles => GetTable<Role>();
+        public ITable<User> Users => GetTable<User>();
     }
 }
