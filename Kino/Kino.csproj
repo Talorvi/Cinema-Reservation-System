@@ -13,6 +13,7 @@
         <FileAlignment>512</FileAlignment>
         <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
         <Deterministic>true</Deterministic>
+        <LangVersion>8</LangVersion>
     </PropertyGroup>
     <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
         <PlatformTarget>AnyCPU</PlatformTarget>
@@ -120,6 +121,8 @@
         </Reference>
     </ItemGroup>
     <ItemGroup>
+        <Compile Include="Controllers\MovieController.cs" />
+        <Compile Include="Models\DbCinema.cs" />
         <Compile Include="Models\Movie.cs" />
         <Compile Include="Utilities\PasswordCipher.cs" />
         <Compile Include="Views\Form1.cs">
@@ -155,9 +158,6 @@
     </ItemGroup>
     <ItemGroup>
         <None Include="App.config" />
-    </ItemGroup>
-    <ItemGroup>
-      <Folder Include="Controllers" />
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
     <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
