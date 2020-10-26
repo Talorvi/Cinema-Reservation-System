@@ -28,6 +28,7 @@ namespace Kino.Controllers
         {
             using var db = new DbCinema();
             var queryable = from user in db.Users
+                where user.Id == id
                 join role in db.Roles on user.RoleId equals role.Id
                 select User.Build(user, role);
 
@@ -75,21 +76,6 @@ namespace Kino.Controllers
             db.Users
                 .Where(user => user.Id == id)
                 .Delete();
-        }
-
-        /*
-         * TODO: Add validation while looking for role
-         */
-        public static Role GetRole(int userId)
-        {
-            using var db = new DbCinema();
-
-            var queryable = from user in db.Users
-                join role in db.Roles on user.RoleId equals role.Id
-                select role;
-
-            var singleRole = queryable.ToArray()[0];
-            return singleRole;
         }
     }
 }
