@@ -4,7 +4,8 @@ namespace Kino.Models
 {
     /*
      * Constructor created automatically by LinqToDB
-     * Creating custom constructor generates an error when fetching data from DB
+     * Creating custom constructor generates an error
+     * when fetching data from DB
      */
     [Table(Name = "movies")]
     public class Movie

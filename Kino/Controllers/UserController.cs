@@ -6,6 +6,9 @@ using LinqToDB;
 
 namespace Kino.Controllers
 {
+    /*
+     * TODO: Add validation and Caesar cypher
+     */
     public static class UserController
     {
         public static List<User> All()
@@ -18,44 +21,49 @@ namespace Kino.Controllers
             return users;
         }
 
+        /*
+         * TODO: Add validation while looking for role
+         */
         public static User Get(int id)
         {
             using var db = new DbCinema();
-            var query = from user in db.Users
-                where user.Id == id
-                select user;
-            var singleUser = query.ToList()[0];
+            var queryable = from user in db.Users
+                join role in db.Roles on user.RoleId equals role.Id
+                select User.Build(user, role);
+
+            var singleUser = queryable.ToList()[0];
             return singleUser;
         }
 
-        public static void Add(string login, string password, int role)
+        /*
+         * Default role is user
+         * 1 - admin
+         * 2 - employee
+         * 3 - user
+         */
+        public static void Add(string login, string password, int roleId = 3)
         {
             using var db = new DbCinema();
             db.Users
                 .Value(user => user.Login, login)
                 .Value(user => user.Password, password)
-                .Value(user => user.Role, role)
+                .Value(user => user.RoleId, roleId)
                 .Insert();
         }
 
-        public static void Update(int id, string? login, string? password, int? role)
+        public static void Update(int id, string? password = null, int? roleId = null)
         {
             using var db = new DbCinema();
             var user = Get(id);
 
-            if (login != null)
-            {
-                user.Login = login;
-            }
-            
             if (password != null)
             {
                 user.Password = password;
             }
             
-            if (role != null)
+            if (roleId != null)
             {
-                user.Role = (int) role;
+                user.RoleId = (int) roleId;
             }
 
             db.Update(user);
@@ -67,6 +75,21 @@ namespace Kino.Controllers
             db.Users
                 .Where(user => user.Id == id)
                 .Delete();
+        }
+
+        /*
+         * TODO: Add validation while looking for role
+         */
+        public static Role GetRole(int userId)
+        {
+            using var db = new DbCinema();
+
+            var queryable = from user in db.Users
+                join role in db.Roles on user.RoleId equals role.Id
+                select role;
+
+            var singleRole = queryable.ToArray()[0];
+            return singleRole;
         }
     }
 }
