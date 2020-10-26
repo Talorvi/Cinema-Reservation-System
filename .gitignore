@@ -1,0 +1,9 @@
+﻿################################################################################
+# Ten plik .gitignore został utworzony automatycznie przez Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs/Kino/v16
+/Kino/bin/Debug
+/Kino/obj/Debug
+/packages/NUnit.3.12.0
+/UpgradeLog.htm
