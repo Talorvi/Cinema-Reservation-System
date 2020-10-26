@@ -1,4 +1,5 @@
 ﻿using System.Windows.Forms;
+using Kino.Controllers;
 
 namespace Kino.Views
 {

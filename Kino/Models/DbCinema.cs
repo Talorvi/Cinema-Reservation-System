@@ -13,5 +13,6 @@ namespace Kino.Models
         public ITable<Role> Roles => GetTable<Role>();
         public ITable<User> Users => GetTable<User>();
         public ITable<Seance> Seances => GetTable<Seance>();
+        public ITable<Reservation> Reservations => GetTable<Reservation>();
     }
 }

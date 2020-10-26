@@ -123,12 +123,14 @@
     <ItemGroup>
         <Compile Include="Controllers\HallController.cs" />
         <Compile Include="Controllers\MovieController.cs" />
+        <Compile Include="Controllers\ReservationController.cs" />
         <Compile Include="Controllers\RoleController.cs" />
         <Compile Include="Controllers\SeanceController.cs" />
         <Compile Include="Controllers\UserController.cs" />
         <Compile Include="Models\DbCinema.cs" />
         <Compile Include="Models\Hall.cs" />
         <Compile Include="Models\Movie.cs" />
+        <Compile Include="Models\Reservation.cs" />
         <Compile Include="Models\Role.cs" />
         <Compile Include="Models\Seance.cs" />
         <Compile Include="Models\User.cs" />

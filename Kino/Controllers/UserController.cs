@@ -1,4 +1,5 @@
 ﻿#nullable enable
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Kino.Models;
@@ -76,6 +77,17 @@ namespace Kino.Controllers
             db.Users
                 .Where(user => user.Id == id)
                 .Delete();
+        }
+
+        public static List<Reservation> GetReservations(int id)
+        {
+            using var db = new DbCinema();
+            var queryable = from reservation in db.Reservations
+                where reservation.UserId == id
+                join user in db.Users on reservation.UserId equals user.Id
+                select reservation;
+
+            return queryable.ToList().Select(reservation => ReservationController.Get(reservation.Id)).ToList();
         }
     }
 }

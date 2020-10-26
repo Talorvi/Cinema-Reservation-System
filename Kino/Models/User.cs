@@ -1,4 +1,5 @@
-﻿using LinqToDB.Mapping;
+﻿using System.Collections.Generic;
+using LinqToDB.Mapping;
 
 namespace Kino.Models
 {
@@ -23,6 +24,8 @@ namespace Kino.Models
         public int RoleId { get; set; }
         
         public Role Role { get; set; }
+        
+        public List<Reservation> Reservations { get; set; }
         
         /*
          * Builder for user, used while fetching
