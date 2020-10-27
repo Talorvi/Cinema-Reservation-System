@@ -7,6 +7,7 @@ namespace Kino.Views
         public MainWindow()
         {
             InitializeComponent();
+            ChangeWindow(new LoginView());
         }
 
         private void ChangeWindow(AbstractChangingWindow window) 

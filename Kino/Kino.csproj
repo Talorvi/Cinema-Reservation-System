@@ -190,6 +190,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <LangVersion>8.0</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -199,6 +200,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <LangVersion>8.0</LangVersion>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="nunit.framework, Version=3.12.0.0, Culture=neutral, PublicKeyToken=2638cd05610744eb">
@@ -222,14 +224,59 @@
     <Compile Include="Views\AbstractChangingWindow.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="Views\Interfaces\IAccount.cs" />
+    <Compile Include="Views\Interfaces\IHall.cs" />
+    <Compile Include="Views\Interfaces\IHallWorkerList.cs" />
+    <Compile Include="Views\Interfaces\ILoggedWindow.cs" />
+    <Compile Include="Views\Interfaces\ILogin.cs" />
+    <Compile Include="Views\Interfaces\IMovie.cs" />
+    <Compile Include="Views\Interfaces\IMoviesWorkerList.cs" />
+    <Compile Include="Views\Interfaces\IMyReservationsList.cs" />
+    <Compile Include="Views\Interfaces\INewReservation.cs" />
+    <Compile Include="Views\Interfaces\IRegister.cs" />
+    <Compile Include="Views\Interfaces\IReservationsWorkerList.cs" />
+    <Compile Include="Views\Interfaces\ISeance.cs" />
+    <Compile Include="Views\Interfaces\ISeancesWorkerList.cs" />
+    <Compile Include="Views\Interfaces\ISeancesList.cs" />
+    <Compile Include="Views\Interfaces\IWorker.cs" />
+    <Compile Include="Views\Interfaces\IWorkersList.cs" />
+    <Compile Include="Views\LoginView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\LoginView.Designer.cs">
+      <DependentUpon>LoginView.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\MainWindow.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Views\MainWindow.Designer.cs">
       <DependentUpon>MainWindow.cs</DependentUpon>
     </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Views\RegisterView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\RegisterView.Designer.cs">
+      <DependentUpon>RegisterView.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Views\LoginView.resx">
+      <DependentUpon>LoginView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\MainWindow.resx">
       <DependentUpon>MainWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Views\RegisterView.resx">
+      <DependentUpon>RegisterView.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
   </ItemGroup>
