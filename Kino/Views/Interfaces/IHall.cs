@@ -8,5 +8,7 @@ namespace Kino.Views.Interfaces
 {
     interface IHall
     {
+        public Action<string> SetHallName { get; set; }
+        public Action SaveHall { get; set; }
     }
 }

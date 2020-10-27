@@ -8,5 +8,8 @@ namespace Kino.Views.Interfaces
 {
     interface IAccount
     {
+        public Func<string,bool> CheckOldPassword { get; set; }
+        public Action<string> SetNewPassword { get; set; }
+        public Action SaveAccount { get; set; }
     }
 }
