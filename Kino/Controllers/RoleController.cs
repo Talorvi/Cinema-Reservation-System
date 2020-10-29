@@ -28,6 +28,16 @@ namespace Kino.Controllers
             return singleRole;
         }
 
+        public static Role GetByName(string name)
+        {
+            using var db = new DbCinema();
+            var query = from role in db.Roles
+                where role.Name == name
+                select role;
+            var singleRole = query.ToList()[0];
+            return singleRole;
+        }
+
         public static void Add(string name)
         {
             using var db = new DbCinema();

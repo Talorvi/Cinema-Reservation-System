@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Kino.Models;
+using Kino.Utilities;
 using LinqToDB;
 
 namespace Kino.Controllers
@@ -37,6 +38,18 @@ namespace Kino.Controllers
             return singleUser;
         }
 
+        public static User GetByLogin(string login)
+        {
+            using var db = new DbCinema();
+            var queryable = from user in db.Users
+                            where user.Login == login
+                            join role in db.Roles on user.RoleId equals role.Id
+                            select User.Build(user, role);
+
+            var singleUser = queryable.ToList()[0];
+            return singleUser;
+        }
+
         /*
          * Default role is user
          * 1 - admin
@@ -48,7 +61,7 @@ namespace Kino.Controllers
             using var db = new DbCinema();
             db.Users
                 .Value(user => user.Login, login)
-                .Value(user => user.Password, password)
+                .Value(user => user.Password, PasswordCipher.ConvertPassword(password))
                 .Value(user => user.RoleId, roleId)
                 .Insert();
         }
@@ -60,7 +73,7 @@ namespace Kino.Controllers
 
             if (password != null)
             {
-                user.Password = password;
+                user.Password = PasswordCipher.ConvertPassword(password);
             }
             
             if (roleId != null)
