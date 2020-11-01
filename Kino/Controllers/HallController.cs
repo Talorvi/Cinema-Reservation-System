@@ -28,6 +28,16 @@ namespace Kino.Controllers
             return singleHall;
         }
 
+        public static Hall GetByName(string name)
+        {
+            using var db = new DbCinema();
+            var query = from hall in db.Halls
+                where hall.Name == name
+                select hall;
+            var singleHall = query.ToList()[0];
+            return singleHall;
+        }
+
         public static void Add(string name)
         {
             using var db = new DbCinema();
