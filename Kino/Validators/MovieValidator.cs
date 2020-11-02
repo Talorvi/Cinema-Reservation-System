@@ -35,6 +35,18 @@ namespace Kino.Validators
             }
         }
 
+        public static Movie GetMovieByName(string name)
+        {
+            try
+            {
+                return MovieController.GetByName(name);
+            }
+            catch (Exception e)
+            {
+                return new Movie();
+            }
+        }
+
         public static bool MovieAddValidation(string name, double length)
         {
             try

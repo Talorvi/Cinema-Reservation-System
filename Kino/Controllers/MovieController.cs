@@ -28,6 +28,16 @@ namespace Kino.Controllers
             return singleMovie;
         }
 
+        public static Movie GetByName(string name)
+        {
+            using var db = new DbCinema();
+            var query = from movie in db.Movies
+                where movie.Name == name
+                select movie;
+            var singleMovie = query.ToList()[0];
+            return singleMovie;
+        }
+
         public static void Add(string name, double length)
         {
             using var db = new DbCinema();
