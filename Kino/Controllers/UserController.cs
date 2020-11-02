@@ -102,5 +102,16 @@ namespace Kino.Controllers
 
             return queryable.ToList().Select(reservation => ReservationController.Get(reservation.Id)).ToList();
         }
+
+        public static bool Login(string login, string password)
+        {
+            using var db = new DbCinema();
+            string encodedPassword = PasswordCipher.ConvertPassword(password);
+            var queryable = from user in db.Users
+                where user.Login == login && user.Password == encodedPassword
+                select user;
+
+            return queryable.ToList().Count > 0;
+        }
     }
 }
