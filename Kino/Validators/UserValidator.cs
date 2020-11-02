@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Kino.Validators
 {
-    class UserValidator
+    public static class UserValidator
     {
 
         public static List<User> GetAllUsers()
@@ -47,7 +47,7 @@ namespace Kino.Validators
             }
         }
 
-        public bool UserAddValidation(string login, string password, int roleId = 3)
+        public static bool UserAddValidation(string login, string password, int roleId = 3)
         {
             try
             {
@@ -64,7 +64,7 @@ namespace Kino.Validators
             }
         }
 
-        public bool UserUpdateValidation(int id, string password, int roleId)
+        public static bool UserUpdateValidation(int id, string password, int roleId)
         {
             try
             {
@@ -77,7 +77,7 @@ namespace Kino.Validators
             }
         }
 
-        public bool UserDeleteValidation(int id)
+        public static bool UserDeleteValidation(int id)
         {
             try
             {
@@ -99,6 +99,18 @@ namespace Kino.Validators
             catch (Exception e)
             {
                 return new List<Reservation>();
+            }
+        }
+
+        public static bool UserLoginValidation(string login, string password)
+        {
+            try
+            {
+                return UserController.Login(login, password);
+            }
+            catch (Exception e)
+            {
+                return false;
             }
         }
     }

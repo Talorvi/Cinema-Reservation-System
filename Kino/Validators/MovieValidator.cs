@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Kino.Validators
 {
-    class MovieValidator
+    public static class MovieValidator
     {
 
         public static List<Movie> GetAllMovies()
@@ -35,7 +35,7 @@ namespace Kino.Validators
             }
         }
 
-        public bool MovieAddValidation(string name, double length)
+        public static bool MovieAddValidation(string name, double length)
         {
             try
             {
@@ -48,7 +48,7 @@ namespace Kino.Validators
             }
         }
 
-        public bool MovieUpdateValidation(int id, string name, double length)
+        public static bool MovieUpdateValidation(int id, string name, double length)
         {
             try
             {
@@ -61,7 +61,7 @@ namespace Kino.Validators
             }
         }
 
-        public bool MovieDeleteValidation(int id)
+        public static bool MovieDeleteValidation(int id)
         {
             try
             {
