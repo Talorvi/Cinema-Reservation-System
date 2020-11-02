@@ -53,7 +53,7 @@ namespace Kino.Validators
         {
             try
             {
-                if (name == null || HallController.GetByName(name) != null)
+                if (name == null || GetHallByName(name).Name != null)
                 {
                     return false;
                 }
