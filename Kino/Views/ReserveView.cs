@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Kino.ViewModels;
 
 namespace Kino.Views
 {
@@ -36,7 +37,9 @@ namespace Kino.Views
             if (index > 0)
             {
                 ReserveSeats(new int[] { index });
-                Change_Window(new PickSeancesList());
+                var win = new PickSeancesList();
+                var vm = new PickSeanceViewModel(win);
+                Change_Window(win);
             }
             else MessageBox.Show("Nie wybrano miejsca.");
         }

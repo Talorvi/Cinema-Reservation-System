@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Kino.ViewModels;
 
 namespace Kino.Views
 {
@@ -40,13 +41,17 @@ namespace Kino.Views
         private void buttonAdd_Click(object sender, EventArgs e)
         {
             MakeNewHallObject();
-            Change_Window(new HallView());
+            var win = new HallView();
+            var vm = new HallViewModel(win);
+            Change_Window(win);
         }
 
         private void buttonEdit_Click(object sender, EventArgs e)
         {
             EditHallOnIndex(index);
-            Change_Window(new HallView());
+            var win = new HallView();
+            var vm = new HallViewModel(win);
+            Change_Window(win);
         }
 
         private void buttonDelete_Click(object sender, EventArgs e)

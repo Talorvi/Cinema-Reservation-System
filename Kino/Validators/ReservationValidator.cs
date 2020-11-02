@@ -47,7 +47,7 @@ namespace Kino.Validators
             }
         }
 
-        public static Reservation GetReservationBySeanceId(int seanceId)
+        public static List<Reservation> GetReservationBySeanceId(int seanceId)
         {
             try
             {
@@ -55,7 +55,7 @@ namespace Kino.Validators
             }
             catch (Exception e)
             {
-                return new Reservation();
+                return new List<Reservation>();
             }
         }
 

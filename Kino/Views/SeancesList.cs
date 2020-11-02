@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Kino.ViewModels;
 
 namespace Kino.Views
 {
@@ -44,13 +45,17 @@ namespace Kino.Views
         private void buttonAdd_Click(object sender, EventArgs e)
         {
             MakeNewSeanceObject();
-            Change_Window(new SeanceView());
+            var win = new SeanceView();
+            var vm = new SeanceViewModel(win);
+            Change_Window(win);
         }
 
         private void buttonEdit_Click(object sender, EventArgs e)
         {
             EditSeanceOnIndex(index);
-            Change_Window(new SeanceView());
+            var win = new SeanceView();
+            var vm = new SeanceViewModel(win);
+            Change_Window(win);
         }
 
         private void buttonDelete_Click(object sender, EventArgs e)

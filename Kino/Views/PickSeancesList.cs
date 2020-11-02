@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Kino.ViewModels;
 
 namespace Kino.Views
 {
@@ -39,7 +40,9 @@ namespace Kino.Views
         private void buttonReserve_Click(object sender, EventArgs e)
         {
             MakeSeanceReservationOnIndex(index);
-            Change_Window(new ReserveView());
+            var win = new ReserveView();
+            var vm = new ReserveViewModel(win);
+            Change_Window(win);
         }
 
         private void listViewSeancess_SelectedIndexChanged(object sender, EventArgs e)

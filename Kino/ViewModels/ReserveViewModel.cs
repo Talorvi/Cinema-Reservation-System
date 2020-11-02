@@ -27,7 +27,7 @@ namespace Kino.ViewModels
 
         private int[] GetSeatsLocket()
         {
-            Validators.ReservationValidator.GetAllReservations();
+            return Validators.ReservationValidator.GetReservationBySeanceId(Cache.Seance.Id).Select(x=>x.Seat).ToArray();
         }
 
         private string GetMovieTitle()
