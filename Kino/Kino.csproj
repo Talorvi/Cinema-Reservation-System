@@ -143,6 +143,8 @@
     <Compile Include="Validators\RoleValidator.cs" />
     <Compile Include="Validators\SeanceValidator.cs" />
     <Compile Include="Validators\UserValidator.cs" />
+    <Compile Include="ViewModels\LoginViewModel.cs" />
+    <Compile Include="ViewModels\RegisterViewModel.cs" />
     <Compile Include="Views\AccountView.cs">
       <SubType>UserControl</SubType>
     </Compile>

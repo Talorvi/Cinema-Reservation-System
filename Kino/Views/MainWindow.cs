@@ -1,4 +1,5 @@
-﻿using System.Windows.Forms;
+﻿using Kino.ViewModels;
+using System.Windows.Forms;
 
 namespace Kino.Views
 {
@@ -7,7 +8,10 @@ namespace Kino.Views
         public MainWindow()
         {
             InitializeComponent();
-            ChangeWindow(new ReserveView());
+            var window = new LoginView();
+            var vm = new LoginViewModel(window);
+            ChangeWindow(window);
+
         }
 
         private void ChangeWindow(AbstractChangingWindow window) 

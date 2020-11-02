@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Kino.ViewModels;
 
 namespace Kino.Views
 {
@@ -21,7 +22,9 @@ namespace Kino.Views
 
         private void linkLabelLogin_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Change_Window(new LoginView());
+            var win = new LoginView();
+            var vm = new LoginViewModel(win);
+            Change_Window(win);
         }
 
         private void buttonRegister_Click(object sender, EventArgs e)
@@ -33,7 +36,9 @@ namespace Kino.Views
             {
                 if (IsRegistrationValid(login, pass))
                 {
-                    Change_Window(new LoginView());
+                    var win = new LoginView();
+                    var vm = new LoginViewModel(win);
+                    Change_Window(win);
                 }
                 else MessageBox.Show("Nie udało się zarejestrować.");
             }
