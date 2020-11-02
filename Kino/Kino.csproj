@@ -146,15 +146,18 @@
     <Compile Include="Validators\UserValidator.cs" />
     <Compile Include="ViewModels\AccountViewModel.cs" />
     <Compile Include="ViewModels\HallsViewModel.cs" />
+    <Compile Include="ViewModels\HallViewModel.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />
     <Compile Include="ViewModels\MoviesViewModel.cs" />
     <Compile Include="ViewModels\MyReservationViewModel.cs" />
     <Compile Include="ViewModels\PickSeanceViewModel.cs" />
+    <Compile Include="ViewModels\MovieViewModel.cs" />
     <Compile Include="ViewModels\RegisterViewModel.cs" />
     <Compile Include="ViewModels\MenuViewModel.cs" />
     <Compile Include="ViewModels\ReservationsViewModel.cs" />
     <Compile Include="ViewModels\SeancesViewModel.cs" />
     <Compile Include="ViewModels\WorkerListViewModel.cs" />
+    <Compile Include="ViewModels\SeanceViewModel.cs" />
     <Compile Include="ViewModels\WorkerViewModel.cs" />
     <Compile Include="Views\AccountView.cs">
       <SubType>UserControl</SubType>
