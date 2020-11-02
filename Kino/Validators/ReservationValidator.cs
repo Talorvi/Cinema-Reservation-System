@@ -51,7 +51,7 @@ namespace Kino.Validators
         {
             try
             {
-                if (userId == null || seanceId == null || ReservationController.GetByUserIdAndSeanceId(userId.Value, seanceId.Value) == null)
+                if (userId == null || seanceId == null || GetReservationByUserIdAndSeanceId(userId.Value, seanceId.Value).UserId != 0)
                 {
                     return false;
                 }
