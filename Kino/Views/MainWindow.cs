@@ -1,4 +1,6 @@
-﻿using System.Windows.Forms;
+﻿using System;
+using System.Windows.Forms;
+using Kino.Validators;
 
 namespace Kino.Views
 {
@@ -7,7 +9,10 @@ namespace Kino.Views
         public MainWindow()
         {
             InitializeComponent();
-            ChangeWindow(new ReserveView());
+            //ChangeWindow(new ReserveView());
+
+            var test = HallValidator.HallAddValidation("test hall");
+            Console.WriteLine(test);
         }
 
         private void ChangeWindow(AbstractChangingWindow window) 

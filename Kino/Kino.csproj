@@ -134,6 +134,7 @@
     <Compile Include="Models\Role.cs" />
     <Compile Include="Models\Seance.cs" />
     <Compile Include="Models\User.cs" />
+    <Compile Include="Tests\Tests.cs" />
     <Compile Include="Utilities\PasswordCipher.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -404,7 +405,6 @@
       <DependentUpon>RegisterView.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
