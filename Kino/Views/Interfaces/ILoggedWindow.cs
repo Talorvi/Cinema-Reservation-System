@@ -9,6 +9,5 @@ namespace Kino.Views.Interfaces
     interface ILoggedWindow
     {
         public Action Logout { get; set; }
-        public Func<bool> IsWorker { get; set; }
     }
 }

@@ -108,6 +108,7 @@
             this.buttonRegister.TabIndex = 0;
             this.buttonRegister.Text = "Zarejestruj się";
             this.buttonRegister.UseVisualStyleBackColor = false;
+            this.buttonRegister.Click += new System.EventHandler(this.buttonRegister_Click);
             // 
             // labelName
             // 

@@ -10,6 +10,9 @@ namespace Kino.Views.Interfaces
     {
         public Func<string[]> GetHallsArray { get; set; }
         public Func<string[]> GetMoviesArray { get; set; }
+        public Func<string> GetHall { get; set; }
+        public Func<string> GetMovie { get; set; }
+        public Func<DateTime> GetDate { get; set; }
         public Action<string> SetHall { get; set; }
         public Action<string> SetMovie { get; set; }
         public Action<DateTime> SetDate { get; set; }
