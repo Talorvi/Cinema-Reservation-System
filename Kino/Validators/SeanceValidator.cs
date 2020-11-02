@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Kino.Validators
 {
-    class SeanceValidator
+    public static class SeanceValidator
     {
 
         public static List<Seance> GetAllSeances()
@@ -35,7 +35,7 @@ namespace Kino.Validators
             }
         }
 
-        public bool SeanceAddValidation(int movieId, int hallId, DateTime time)
+        public static bool SeanceAddValidation(int movieId, int hallId, DateTime time)
         {
             try
             {
@@ -48,7 +48,7 @@ namespace Kino.Validators
             }
         }
 
-        public bool SeanceUpdateValidation(int id, int movieId, int hallId, DateTime time)
+        public static bool SeanceUpdateValidation(int id, int movieId, int hallId, DateTime time)
         {
             try
             {
@@ -61,7 +61,7 @@ namespace Kino.Validators
             }
         }
 
-        public bool SeanceDeleteValidation(int id)
+        public static bool SeanceDeleteValidation(int id)
         {
             try
             {

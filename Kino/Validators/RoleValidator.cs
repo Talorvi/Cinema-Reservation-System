@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Kino.Validators
 {
-    class RoleValidator
+    public static class RoleValidator
     {
 
         public static List<Role> GetAllRoles()
@@ -47,7 +47,7 @@ namespace Kino.Validators
             }
         }
 
-        public bool RoleAddValidation(string name)
+        public static bool RoleAddValidation(string name)
         {
             try
             {
@@ -64,7 +64,7 @@ namespace Kino.Validators
             }
         }
 
-        public bool RoleUpdateValidation(int id, string name)
+        public static bool RoleUpdateValidation(int id, string name)
         {
             try
             {
@@ -77,7 +77,7 @@ namespace Kino.Validators
             }
         }
 
-        public bool RoleDeleteValidation(int id)
+        public static bool RoleDeleteValidation(int id)
         {
             try
             {

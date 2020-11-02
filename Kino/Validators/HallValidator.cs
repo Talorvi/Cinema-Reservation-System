@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace Kino.Validators
 {
-    class HallValidator
+    public static class HallValidator
     {
 
         public static List<Hall> GetAllHalls()
@@ -49,7 +49,7 @@ namespace Kino.Validators
             }
         }
 
-        public bool HallAddValidation(string name)
+        public static bool HallAddValidation(string name)
         {
             try
             {
@@ -66,7 +66,7 @@ namespace Kino.Validators
             }
         }
 
-        public bool HallUpdateValidation(int id, string name)
+        public static bool HallUpdateValidation(int id, string name)
         {
             try
             {
@@ -79,7 +79,7 @@ namespace Kino.Validators
             }
         }
 
-        public bool HallDeleteValidation(int id)
+        public static bool HallDeleteValidation(int id)
         {
             try
             {

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Kino.Validators
 {
-    class ReservationValidator
+    public static class ReservationValidator
     {
 
         public static List<Reservation> GetAllReservations()
@@ -47,7 +47,7 @@ namespace Kino.Validators
             }
         }
 
-        public bool ReservationAddValidation(int? userId = null, int? seanceId = null, int? seat = null, bool isConfirmed = false)
+        public static bool ReservationAddValidation(int? userId = null, int? seanceId = null, int? seat = null, bool isConfirmed = false)
         {
             try
             {
@@ -64,7 +64,7 @@ namespace Kino.Validators
             }
         }
 
-        public bool ReservationUpdateValidation(int id, int seat, bool isConfirmed)
+        public static bool ReservationUpdateValidation(int id, int seat, bool isConfirmed)
         {
             try
             {
@@ -77,7 +77,7 @@ namespace Kino.Validators
             }
         }
 
-        public bool ReservationDeleteValidation(int id)
+        public static bool ReservationDeleteValidation(int id)
         {
             try
             {
