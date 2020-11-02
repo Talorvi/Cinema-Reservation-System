@@ -51,7 +51,7 @@ namespace Kino.Validators
         {
             try
             {
-                if (name == null || RoleController.GetByName(name) != null)
+                if (name == null || GetRoleByName(name).Name != null)
                 {
                     return false;
                 }

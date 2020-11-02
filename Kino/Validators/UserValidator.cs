@@ -51,7 +51,7 @@ namespace Kino.Validators
         {
             try
             {
-                if (login == null || password == null || UserController.GetByLogin(login) != null)
+                if (login == null || password == null || GetUserByLogin(login).Login != null)
                 {
                     return false;
                 }
