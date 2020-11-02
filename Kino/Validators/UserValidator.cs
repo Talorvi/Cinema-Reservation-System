@@ -101,5 +101,17 @@ namespace Kino.Validators
                 return new List<Reservation>();
             }
         }
+
+        public static bool UserLoginValidation(string login, string password)
+        {
+            try
+            {
+                return UserController.Login(login, password);
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
+        }
     }
 }
