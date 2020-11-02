@@ -137,6 +137,12 @@
     <Compile Include="Utilities\PasswordCipher.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Validators\HallValidator.cs" />
+    <Compile Include="Validators\MovieValidator.cs" />
+    <Compile Include="Validators\ReservationValidator.cs" />
+    <Compile Include="Validators\RoleValidator.cs" />
+    <Compile Include="Validators\SeanceValidator.cs" />
+    <Compile Include="Validators\UserValidator.cs" />
     <Compile Include="Views\AccountView.cs">
       <SubType>UserControl</SubType>
     </Compile>
