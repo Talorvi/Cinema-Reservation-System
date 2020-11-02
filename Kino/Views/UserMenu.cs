@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Kino.ViewModels;
 
 namespace Kino.Views
 {
@@ -28,23 +29,31 @@ namespace Kino.Views
 
         private void buttonReservations_Click(object sender, EventArgs e)
         {
-            Change_Panel(new MyReservationList());
+            var win = new MyReservationList();
+            var vm = new MyReservationViewModel(win);
+            Change_Panel(win);
         }
 
         private void buttonSeances_Click(object sender, EventArgs e)
         {
-            Change_Panel(new PickSeancesList());
+            var win = new PickSeancesList();
+            var vm = new PickSeanceViewModel(win);
+            Change_Panel(win);
         }
 
         private void buttonAccount_Click(object sender, EventArgs e)
         {
-            Change_Panel(new AccountView());
+            var win = new AccountView();
+            var vm = new AccountViewModel(win);
+            Change_Panel(win);
         }
 
         private void buttonLogout_Click(object sender, EventArgs e)
         {
             Logout();
-            Change_Window(new LoginView());
+            var window = new LoginView();
+            var vm = new LoginViewModel(window);
+            Change_Window(window);
         }
     }
 }

@@ -27,8 +27,18 @@ namespace Kino.Views
             var pass = textBoxPassword.Text;
             if (IsLoginValid(login, pass))
             {
-                if (IsWorker(login)) Change_Window(new WorkerMenu());
-                else Change_Window(new UserMenu());
+                if (IsWorker(login))
+                {
+                    var win = new WorkerMenu();
+                    var vm = new MenuViewModel(win);
+                    Change_Window(win);
+                }
+                else
+                {
+                    var win = new UserMenu();
+                    var vm = new MenuViewModel(win);
+                    Change_Window(win);
+                }
             }
             else MessageBox.Show("Nieprawidłowe dane logowania.");            
         }

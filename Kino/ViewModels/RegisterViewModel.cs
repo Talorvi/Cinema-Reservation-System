@@ -9,10 +9,8 @@ namespace Kino.ViewModels
 {
     class RegisterViewModel
     {
-        private IRegister view;
         public RegisterViewModel(IRegister view)
         {
-            this.view = view;
             view.IsRegistrationValid += IsRegistrationValid;
         }
 

@@ -134,6 +134,7 @@
     <Compile Include="Models\Role.cs" />
     <Compile Include="Models\Seance.cs" />
     <Compile Include="Models\User.cs" />
+    <Compile Include="Utilities\Cache.cs" />
     <Compile Include="Utilities\PasswordCipher.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -143,8 +144,16 @@
     <Compile Include="Validators\RoleValidator.cs" />
     <Compile Include="Validators\SeanceValidator.cs" />
     <Compile Include="Validators\UserValidator.cs" />
+    <Compile Include="ViewModels\AccountViewModel.cs" />
+    <Compile Include="ViewModels\HallsViewModel.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />
+    <Compile Include="ViewModels\MoviesViewModel.cs" />
+    <Compile Include="ViewModels\MyReservationViewModel.cs" />
+    <Compile Include="ViewModels\PickSeanceViewModel.cs" />
     <Compile Include="ViewModels\RegisterViewModel.cs" />
+    <Compile Include="ViewModels\MenuViewModel.cs" />
+    <Compile Include="ViewModels\ReservationsViewModel.cs" />
+    <Compile Include="ViewModels\WorkerListViewModel.cs" />
     <Compile Include="Views\AccountView.cs">
       <SubType>UserControl</SubType>
     </Compile>

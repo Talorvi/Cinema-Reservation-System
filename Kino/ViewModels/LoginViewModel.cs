@@ -1,4 +1,5 @@
 ﻿using Kino.Models;
+using Kino.Utilities;
 using Kino.Views.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -10,10 +11,8 @@ namespace Kino.ViewModels
 {
     class LoginViewModel
     {
-        private ILogin view;
         public LoginViewModel(ILogin view)
         {
-            this.view = view;
             view.IsLoginValid += IsLoginValid;
             view.IsWorker += IsWorker;
         }
@@ -25,6 +24,7 @@ namespace Kino.ViewModels
         private bool IsWorker(string user)
         {
             var tmp = Validators.UserValidator.GetUserByLogin(user);
+            Cache.User = tmp;
             if(tmp.Role.Name == "user")
             {
                 return false;
