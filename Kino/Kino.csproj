@@ -153,7 +153,9 @@
     <Compile Include="ViewModels\RegisterViewModel.cs" />
     <Compile Include="ViewModels\MenuViewModel.cs" />
     <Compile Include="ViewModels\ReservationsViewModel.cs" />
+    <Compile Include="ViewModels\SeancesViewModel.cs" />
     <Compile Include="ViewModels\WorkerListViewModel.cs" />
+    <Compile Include="ViewModels\WorkerViewModel.cs" />
     <Compile Include="Views\AccountView.cs">
       <SubType>UserControl</SubType>
     </Compile>

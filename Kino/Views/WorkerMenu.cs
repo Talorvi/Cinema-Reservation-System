@@ -44,7 +44,9 @@ namespace Kino.Views
 
         private void buttonSeances_Click(object sender, EventArgs e)
         {
-            Change_Panel(new SeancesList());
+            var win = new SeancesList();
+            var vm = new SeancesViewModel(win);
+            Change_Panel(win);
         }
 
         private void buttonReservations_Click(object sender, EventArgs e)
