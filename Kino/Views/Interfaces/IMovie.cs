@@ -8,6 +8,7 @@ namespace Kino.Views.Interfaces
 {
     interface IMovie
     {
+        public Func<string> GetMovieTitle { get; set; }
         public Action<string> SetMovieTitle { get; set; }
         public Action SaveMovie { get; set; }
     }

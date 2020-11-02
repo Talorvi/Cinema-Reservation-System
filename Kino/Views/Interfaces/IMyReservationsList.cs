@@ -12,9 +12,11 @@ namespace Kino.Views.Interfaces
         public Func<int> GetReservationListCount { get; set; }
         public Action<int> ReadReservationOnIndex { get; set; }
         public Func<string> GetMovieTitle { get; set; }
+        public Func<string> GetHallName { get; set; }
         public Func<int> GetSeatNumber { get; set; }
         public Func<DateTime> GetDate { get; set; }
-        public Action ConfirmReservation { get; set; }
+        public Func<bool> GetConfirmation { get; set; }
+        public Action<int> ConfirmReservationAtIndex { get; set; }
 
     }
 }
