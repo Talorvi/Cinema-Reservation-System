@@ -1,4 +1,6 @@
 ﻿using Kino.ViewModels;
+using System;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace Kino.Views
