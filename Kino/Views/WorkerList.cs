@@ -7,11 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Kino.ViewModels;
 
 namespace Kino.Views
 {
     public partial class WorkerList : AbstractChangingWindow, Interfaces.IWorkersList
     {
+        private WorkerListViewModel viewModel;
         private int index = -1;
         public Action LoadWorkersList { get; set; }
         public Func<int> GetWorkersListCount { get; set; }
@@ -24,6 +26,7 @@ namespace Kino.Views
         public WorkerList()
         {
             InitializeComponent();
+            viewModel = new WorkerListViewModel(this);
             listViewWorkers.Items.Clear();
             buttonEdit.Enabled = false;
             buttonDelete.Enabled = false;

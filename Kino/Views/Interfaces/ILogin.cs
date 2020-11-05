@@ -9,6 +9,6 @@ namespace Kino.Views.Interfaces
     interface ILogin
     {
         public Func<string, string, bool> IsLoginValid { get; set; }
-        public Func<bool> IsWorker { get; set; }
+        public Func<string,bool> IsWorker { get; set; }
     }
 }

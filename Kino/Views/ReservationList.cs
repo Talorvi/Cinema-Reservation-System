@@ -7,14 +7,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Kino.ViewModels;
 
 namespace Kino.Views
 {
     public partial class ReservationList : AbstractChangingWindow, Interfaces.IReservationsWorkerList
     {
+        private ReservationsViewModel viewModel;
         public ReservationList()
         {
             InitializeComponent();
+            viewModel = new ReservationsViewModel(this);
             listViewReservations.Items.Clear();
             LoadReservationsList();
             var count = GetReservationListCount();

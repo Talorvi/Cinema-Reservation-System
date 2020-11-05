@@ -7,14 +7,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Kino.ViewModels;
 
 namespace Kino.Views
 {
     public partial class HallView : AbstractChangingWindow, Interfaces.IHall
     {
+        private HallViewModel viewModel;
         public HallView()
         {
             InitializeComponent();
+            viewModel = new HallViewModel(this);
             textBoxName.Text = GetHallName();
         }
 

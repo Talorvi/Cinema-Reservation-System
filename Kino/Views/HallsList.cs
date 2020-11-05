@@ -7,11 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Kino.ViewModels;
 
 namespace Kino.Views
 {
     public partial class HallsList : AbstractChangingWindow, Interfaces.IHallWorkerList
     {
+        private HallsViewModel viewModel;
         private int index = -1;
         public Action LoadHallsList { get; set; }
         public Func<int> GetHallsListCount { get; set; }
@@ -24,6 +26,7 @@ namespace Kino.Views
         public HallsList()
         {
             InitializeComponent();
+            viewModel = new HallsViewModel(this);
             listViewHalls.Items.Clear();
             buttonEdit.Enabled = false;
             buttonDelete.Enabled = false;

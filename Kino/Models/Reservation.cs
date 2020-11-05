@@ -42,5 +42,14 @@ namespace Kino.Models
             }
             return reservation;
         }
+
+        public static Reservation Build(Reservation reservation, Seance seance)
+        {
+            if (reservation != null)
+            {
+                reservation.Seance = seance;
+            }
+            return reservation;
+        }
     }
 }

@@ -7,14 +7,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Kino.ViewModels;
 
 namespace Kino.Views
 {
     public partial class MovieList : AbstractChangingWindow, Interfaces.IMoviesWorkerList
     {
+        private MoviesViewModel viewModel;
         public MovieList()
         {
             InitializeComponent();
+            viewModel = new MoviesViewModel(this);
             listViewMovies.Items.Clear();
             buttonEdit.Enabled = false;
             buttonDelete.Enabled = false;

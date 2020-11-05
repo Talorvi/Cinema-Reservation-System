@@ -7,14 +7,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Kino.ViewModels;
 
 namespace Kino.Views
 {
     public partial class MovieView : AbstractChangingWindow, Interfaces.IMovie
     {
+        private MovieViewModel viewModel;
         public MovieView()
         {
             InitializeComponent();
+            viewModel = new MovieViewModel(this);
             textBoxName.Text = GetMovieTitle();
         }
 

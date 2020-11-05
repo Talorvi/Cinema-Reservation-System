@@ -7,14 +7,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Kino.ViewModels;
 
 namespace Kino.Views
 {
     public partial class MyReservationList : AbstractChangingWindow, Interfaces.IMyReservationsList
     {
+        private MyReservationViewModel viewModel;
         public MyReservationList()
         {
             InitializeComponent();
+            viewModel = new MyReservationViewModel(this);
             listViewMyReservations.Items.Clear();
             buttonConfirm.Enabled = false;
             LoadReservationsList();

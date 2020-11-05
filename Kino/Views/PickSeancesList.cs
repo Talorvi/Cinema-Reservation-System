@@ -7,14 +7,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Kino.ViewModels;
+using System.Linq.Expressions;
 
 namespace Kino.Views
 {
     public partial class PickSeancesList : AbstractChangingWindow, Interfaces.ISeancesList
     {
+        private PickSeanceViewModel viewModel;
         public PickSeancesList()
         {
             InitializeComponent();
+            viewModel = new PickSeanceViewModel(this);
             listViewSeances.Items.Clear();
             buttonReserve.Enabled = false;
             LoadSenacesList();

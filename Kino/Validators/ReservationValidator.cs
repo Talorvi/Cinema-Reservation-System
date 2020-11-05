@@ -47,6 +47,18 @@ namespace Kino.Validators
             }
         }
 
+        public static List<Reservation> GetReservationBySeanceId(int seanceId)
+        {
+            try
+            {
+                return ReservationController.GetBySeanceId(seanceId);
+            }
+            catch (Exception e)
+            {
+                return new List<Reservation>();
+            }
+        }
+
         public static bool ReservationAddValidation(int? userId = null, int? seanceId = null, int? seat = null, bool isConfirmed = false)
         {
             try

@@ -7,14 +7,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Kino.ViewModels;
 
 namespace Kino.Views
 {
     public partial class RegisterView : AbstractChangingWindow, Interfaces.IRegister
     {
+        private RegisterViewModel viewModel;
         public RegisterView()
         {
             InitializeComponent();
+            viewModel = new RegisterViewModel(this);
         }
 
         public Func<string, string, bool> IsRegistrationValid { get; set; }

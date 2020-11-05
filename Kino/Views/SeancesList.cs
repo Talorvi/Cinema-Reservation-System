@@ -7,11 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Kino.ViewModels;
 
 namespace Kino.Views
 {
     public partial class SeancesList : AbstractChangingWindow , Interfaces.ISeancesWorkerList
     {
+        private SeancesViewModel viewModel;
         private int index = -1;
         public Action LoadSenacesList { get; set; }
         public Func<int> GetSeancesListCount { get; set; }
@@ -26,6 +28,7 @@ namespace Kino.Views
         public SeancesList()
         {
             InitializeComponent();
+            viewModel = new SeancesViewModel(this);
             listViewSeances.Items.Clear();
             buttonEdit.Enabled = false;
             buttonDelete.Enabled = false;

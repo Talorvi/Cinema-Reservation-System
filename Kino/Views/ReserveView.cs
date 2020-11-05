@@ -7,14 +7,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Kino.ViewModels;
 
 namespace Kino.Views
 {
     public partial class ReserveView : AbstractChangingWindow, Interfaces.INewReservation
     {
+        private ReserveViewModel viewModel;
         public ReserveView()
         {
             InitializeComponent();
+            viewModel = new ReserveViewModel(this);
             labelTitle.Text = GetMovieTitle();
             labelDate.Text = GetDate().ToString("MM/dd/yyyy HH:mm");
             var locked = GetSeatsLocked();

@@ -48,6 +48,18 @@ namespace Kino.Controllers
             return singleReservation;
         }
         
+        public static List<Reservation> GetBySeanceId(int seanceId)
+        {
+            using var db = new DbCinema();
+            var queryable = from reservation in db.Reservations
+                join seance in db.Seances on reservation.SeanceId equals seance.Id
+                where reservation.SeanceId == seanceId
+                select Reservation.Build(reservation, seance);
+
+            var reservations = queryable.ToList();
+            return reservations;
+        }
+        
         public static void Add(int userId, int seanceId, int seat, bool isConfirmed = false)
         {
             using var db = new DbCinema();

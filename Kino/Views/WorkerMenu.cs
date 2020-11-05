@@ -7,14 +7,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Kino.ViewModels;
 
 namespace Kino.Views
 {
     public partial class WorkerMenu : AbstractChangingWindow , Interfaces.ILoggedWindow
     {
+        private MenuViewModel viewModel;
         public WorkerMenu()
         {
             InitializeComponent();
+            viewModel = new MenuViewModel(this);
         }
 
         public Action Logout { get; set; }
