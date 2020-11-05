@@ -12,8 +12,9 @@ namespace Kino.Controllers
         {
             using var db = new DbCinema();
             var query = from seance in db.Seances
-                orderby seance.Time descending
-                select seance;
+                join movie in db.Movies on seance.MovieId equals movie.Id
+                join hall in db.Halls on seance.HallId equals hall.Id
+                select Seance.Build(seance, movie, hall);
             var seances = query.ToList();
             return seances;
         }
