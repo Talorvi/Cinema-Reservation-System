@@ -13,9 +13,11 @@ namespace Kino.Views
 {
     public partial class ReserveView : AbstractChangingWindow, Interfaces.INewReservation
     {
+        private ReserveViewModel viewModel;
         public ReserveView()
         {
             InitializeComponent();
+            viewModel = new ReserveViewModel(this);
             labelTitle.Text = GetMovieTitle();
             labelDate.Text = GetDate().ToString("MM/dd/yyyy HH:mm");
             var locked = GetSeatsLocked();
@@ -37,9 +39,7 @@ namespace Kino.Views
             if (index > 0)
             {
                 ReserveSeats(new int[] { index });
-                var win = new PickSeancesList();
-                var vm = new PickSeanceViewModel(win);
-                Change_Window(win);
+                Change_Window(new PickSeancesList());
             }
             else MessageBox.Show("Nie wybrano miejsca.");
         }

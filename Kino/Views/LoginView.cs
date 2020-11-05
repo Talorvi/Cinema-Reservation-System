@@ -6,19 +6,19 @@ namespace Kino.Views
 {
     public partial class LoginView : AbstractChangingWindow, Interfaces.ILogin
     {
+        private LoginViewModel viewModel;
         public Func<string, string, bool> IsLoginValid { get; set; }
         public Func<string,bool> IsWorker { get; set; }
 
         public LoginView()
         {
             InitializeComponent();
+            viewModel = new LoginViewModel(this);
         }
 
         private void linkLabelRegister_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            var win = new RegisterView();
-            var vm = new RegisterViewModel(win);
-            Change_Window(win);
+            Change_Window(new RegisterView());
         }
 
         private void buttonLogin_Click(object sender, System.EventArgs e)
@@ -29,15 +29,11 @@ namespace Kino.Views
             {
                 if (IsWorker(login))
                 {
-                    var win = new WorkerMenu();
-                    var vm = new MenuViewModel(win);
-                    Change_Window(win);
+                    Change_Window(new WorkerMenu());
                 }
                 else
                 {
-                    var win = new UserMenu();
-                    var vm = new MenuViewModel(win);
-                    Change_Window(win);
+                    Change_Window(new UserMenu());
                 }
             }
             else MessageBox.Show("Nieprawidłowe dane logowania.");            

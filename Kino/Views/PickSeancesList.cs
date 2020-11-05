@@ -8,14 +8,17 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Kino.ViewModels;
+using System.Linq.Expressions;
 
 namespace Kino.Views
 {
     public partial class PickSeancesList : AbstractChangingWindow, Interfaces.ISeancesList
     {
+        private PickSeanceViewModel viewModel;
         public PickSeancesList()
         {
             InitializeComponent();
+            viewModel = new PickSeanceViewModel(this);
             listViewSeances.Items.Clear();
             buttonReserve.Enabled = false;
             LoadSenacesList();
@@ -40,9 +43,7 @@ namespace Kino.Views
         private void buttonReserve_Click(object sender, EventArgs e)
         {
             MakeSeanceReservationOnIndex(index);
-            var win = new ReserveView();
-            var vm = new ReserveViewModel(win);
-            Change_Window(win);
+            Change_Window(new ReserveView());
         }
 
         private void listViewSeancess_SelectedIndexChanged(object sender, EventArgs e)

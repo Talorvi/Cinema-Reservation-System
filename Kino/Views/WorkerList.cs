@@ -13,6 +13,7 @@ namespace Kino.Views
 {
     public partial class WorkerList : AbstractChangingWindow, Interfaces.IWorkersList
     {
+        private WorkerListViewModel viewModel;
         private int index = -1;
         public Action LoadWorkersList { get; set; }
         public Func<int> GetWorkersListCount { get; set; }
@@ -25,6 +26,7 @@ namespace Kino.Views
         public WorkerList()
         {
             InitializeComponent();
+            viewModel = new WorkerListViewModel(this);
             listViewWorkers.Items.Clear();
             buttonEdit.Enabled = false;
             buttonDelete.Enabled = false;
@@ -41,17 +43,13 @@ namespace Kino.Views
         private void buttonAdd_Click(object sender, EventArgs e)
         {
             MakeNewWorker();
-            var win = new WorkerView();
-            var vm = new WorkerViewModel(win);
-            Change_Window(win);
+            Change_Window(new WorkerView());
         }
 
         private void buttonEdit_Click(object sender, EventArgs e)
         {
             EditWorkerOnIndex(index);
-            var win = new WorkerView();
-            var vm = new WorkerViewModel(win);
-            Change_Window(win);
+            Change_Window(new WorkerView());
         }
 
         private void buttonDelete_Click(object sender, EventArgs e)

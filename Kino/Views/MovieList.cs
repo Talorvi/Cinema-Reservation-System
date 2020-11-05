@@ -13,9 +13,11 @@ namespace Kino.Views
 {
     public partial class MovieList : AbstractChangingWindow, Interfaces.IMoviesWorkerList
     {
+        private MoviesViewModel viewModel;
         public MovieList()
         {
             InitializeComponent();
+            viewModel = new MoviesViewModel(this);
             listViewMovies.Items.Clear();
             buttonEdit.Enabled = false;
             buttonDelete.Enabled = false;
@@ -41,17 +43,13 @@ namespace Kino.Views
         private void buttonAdd_Click(object sender, EventArgs e)
         {
             MakeNewMovieObject();
-            var win = new MovieView();
-            var vn = new MovieViewModel(win);
-            Change_Window(win);
+            Change_Window(new MovieView());
         }
 
         private void buttonEdit_Click(object sender, EventArgs e)
         {
             EditMovieOnIndex(index);
-            var win = new MovieView();
-            var vn = new MovieViewModel(win);
-            Change_Window(win);
+            Change_Window(new MovieView());
         }
 
         private void buttonDelete_Click(object sender, EventArgs e)

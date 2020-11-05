@@ -10,9 +10,7 @@ namespace Kino.Views
         public MainWindow()
         {
             InitializeComponent();
-            var window = new LoginView();
-            var vm = new LoginViewModel(window);
-            ChangeWindow(window);
+            ChangeWindow(new LoginView());
 
         }
 

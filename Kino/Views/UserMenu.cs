@@ -13,9 +13,11 @@ namespace Kino.Views
 {
     public partial class UserMenu : AbstractChangingWindow , Interfaces.ILoggedWindow
     {
+        private MenuViewModel viewModel;
         public UserMenu()
         {
             InitializeComponent();
+            viewModel = new MenuViewModel(this);
         }
 
         public Action Logout { get; set; }
@@ -29,31 +31,23 @@ namespace Kino.Views
 
         private void buttonReservations_Click(object sender, EventArgs e)
         {
-            var win = new MyReservationList();
-            var vm = new MyReservationViewModel(win);
-            Change_Panel(win);
+            Change_Panel(new MyReservationList());
         }
 
         private void buttonSeances_Click(object sender, EventArgs e)
         {
-            var win = new PickSeancesList();
-            var vm = new PickSeanceViewModel(win);
-            Change_Panel(win);
+            Change_Panel(new PickSeancesList());
         }
 
         private void buttonAccount_Click(object sender, EventArgs e)
         {
-            var win = new AccountView();
-            var vm = new AccountViewModel(win);
-            Change_Panel(win);
+            Change_Panel(new AccountView());
         }
 
         private void buttonLogout_Click(object sender, EventArgs e)
         {
             Logout();
-            var window = new LoginView();
-            var vm = new LoginViewModel(window);
-            Change_Window(window);
+            Change_Window(new LoginView());
         }
     }
 }

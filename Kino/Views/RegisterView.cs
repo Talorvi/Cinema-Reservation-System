@@ -13,18 +13,18 @@ namespace Kino.Views
 {
     public partial class RegisterView : AbstractChangingWindow, Interfaces.IRegister
     {
+        private RegisterViewModel viewModel;
         public RegisterView()
         {
             InitializeComponent();
+            viewModel = new RegisterViewModel(this);
         }
 
         public Func<string, string, bool> IsRegistrationValid { get; set; }
 
         private void linkLabelLogin_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            var win = new LoginView();
-            var vm = new LoginViewModel(win);
-            Change_Window(win);
+            Change_Window(new LoginView());
         }
 
         private void buttonRegister_Click(object sender, EventArgs e)
@@ -36,9 +36,7 @@ namespace Kino.Views
             {
                 if (IsRegistrationValid(login, pass))
                 {
-                    var win = new LoginView();
-                    var vm = new LoginViewModel(win);
-                    Change_Window(win);
+                    Change_Window(new LoginView());
                 }
                 else MessageBox.Show("Nie udało się zarejestrować.");
             }

@@ -13,6 +13,7 @@ namespace Kino.Views
 {
     public partial class HallsList : AbstractChangingWindow, Interfaces.IHallWorkerList
     {
+        private HallsViewModel viewModel;
         private int index = -1;
         public Action LoadHallsList { get; set; }
         public Func<int> GetHallsListCount { get; set; }
@@ -25,6 +26,7 @@ namespace Kino.Views
         public HallsList()
         {
             InitializeComponent();
+            viewModel = new HallsViewModel(this);
             listViewHalls.Items.Clear();
             buttonEdit.Enabled = false;
             buttonDelete.Enabled = false;
@@ -41,17 +43,13 @@ namespace Kino.Views
         private void buttonAdd_Click(object sender, EventArgs e)
         {
             MakeNewHallObject();
-            var win = new HallView();
-            var vm = new HallViewModel(win);
-            Change_Window(win);
+            Change_Window(new HallView());
         }
 
         private void buttonEdit_Click(object sender, EventArgs e)
         {
             EditHallOnIndex(index);
-            var win = new HallView();
-            var vm = new HallViewModel(win);
-            Change_Window(win);
+            Change_Window(new HallView());
         }
 
         private void buttonDelete_Click(object sender, EventArgs e)

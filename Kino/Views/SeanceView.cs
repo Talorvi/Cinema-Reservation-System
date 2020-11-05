@@ -7,14 +7,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Kino.ViewModels;
 
 namespace Kino.Views
 {
     public partial class SeanceView : AbstractChangingWindow,Interfaces.ISeance
     {
+        private SeanceViewModel viewModel;
         public SeanceView()
         {
             InitializeComponent();
+            viewModel = new SeanceViewModel(this);
             comboBoxHall.Text = GetHall();
             comboBoxMovie.Text = GetMovie();
             comboBoxHall.Items.AddRange(GetHallsArray());

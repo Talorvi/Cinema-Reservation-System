@@ -13,6 +13,7 @@ namespace Kino.Views
 {
     public partial class SeancesList : AbstractChangingWindow , Interfaces.ISeancesWorkerList
     {
+        private SeancesViewModel viewModel;
         private int index = -1;
         public Action LoadSenacesList { get; set; }
         public Func<int> GetSeancesListCount { get; set; }
@@ -27,6 +28,7 @@ namespace Kino.Views
         public SeancesList()
         {
             InitializeComponent();
+            viewModel = new SeancesViewModel(this);
             listViewSeances.Items.Clear();
             buttonEdit.Enabled = false;
             buttonDelete.Enabled = false;
@@ -45,17 +47,13 @@ namespace Kino.Views
         private void buttonAdd_Click(object sender, EventArgs e)
         {
             MakeNewSeanceObject();
-            var win = new SeanceView();
-            var vm = new SeanceViewModel(win);
-            Change_Window(win);
+            Change_Window(new SeanceView());
         }
 
         private void buttonEdit_Click(object sender, EventArgs e)
         {
             EditSeanceOnIndex(index);
-            var win = new SeanceView();
-            var vm = new SeanceViewModel(win);
-            Change_Window(win);
+            Change_Window(new SeanceView());
         }
 
         private void buttonDelete_Click(object sender, EventArgs e)

@@ -7,14 +7,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Kino.ViewModels;
 
 namespace Kino.Views
 {
     public partial class WorkerView : AbstractChangingWindow, Interfaces.IWorker
     {
+        private WorkerViewModel viewModel;
         public WorkerView()
         {
             InitializeComponent();
+            viewModel = new WorkerViewModel(this);
             textBoxName.Text = GetWorkerUsername();
         }
 

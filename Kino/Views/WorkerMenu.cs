@@ -13,18 +13,18 @@ namespace Kino.Views
 {
     public partial class WorkerMenu : AbstractChangingWindow , Interfaces.ILoggedWindow
     {
+        private MenuViewModel viewModel;
         public WorkerMenu()
         {
             InitializeComponent();
+            viewModel = new MenuViewModel(this);
         }
 
         public Action Logout { get; set; }
 
         private void buttonMovies_Click(object sender, EventArgs e)
         {
-            var win = new MovieList();
-            var vm = new MoviesViewModel(win);
-            Change_Panel(win);
+            Change_Panel(new MovieList());
         }
 
         private void Change_Panel(AbstractChangingWindow window)
@@ -37,45 +37,33 @@ namespace Kino.Views
 
         private void buttonHalls_Click(object sender, EventArgs e)
         {
-            var win = new HallsList();
-            var vm = new HallsViewModel(win);
-            Change_Panel(win);
+            Change_Panel(new HallsList());
         }
 
         private void buttonSeances_Click(object sender, EventArgs e)
         {
-            var win = new SeancesList();
-            var vm = new SeancesViewModel(win);
-            Change_Panel(win);
+            Change_Panel(new SeancesList());
         }
 
         private void buttonReservations_Click(object sender, EventArgs e)
         {
-            var win = new ReservationList();
-            var vn = new ReservationsViewModel(win);
-            Change_Panel(win);
+            Change_Panel(new ReservationList());
         }
 
         private void buttonWorkers_Click(object sender, EventArgs e)
         {
-            var win = new WorkerList();
-            var vm = new WorkerListViewModel(win);
-            Change_Panel(win);
+            Change_Panel(new WorkerList());
         }
 
         private void buttonAccount_Click(object sender, EventArgs e)
         {
-            var win = new AccountView();
-            var vm = new AccountViewModel(win);
-            Change_Panel(win);
+            Change_Panel(new AccountView());
         }
 
         private void buttonLogout_Click(object sender, EventArgs e)
         {
             Logout();
-            var window = new LoginView();
-            var vm = new LoginViewModel(window);
-            Change_Window(window);
+            Change_Window(new LoginView());
         }
     }
 }
