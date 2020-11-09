@@ -47,9 +47,8 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.panelMain);
             this.Name = "MainWindow";
-            this.Text = "Form1";
+            this.Text = "Ræserve";
             this.ResumeLayout(false);
-
         }
 
         #endregion
