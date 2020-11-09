@@ -62,8 +62,8 @@ namespace Kino.ViewModels
             else
             {
                 SeanceValidator.SeanceAddValidation(
-                    Cache.Seance.MovieId,
-                    Cache.Seance.HallId,
+                    MovieValidator.GetMovieByName(Cache.Seance.Movie.Name).Id,
+                    HallValidator.GetHallByName(Cache.Seance.Hall.Name).Id,
                     Cache.Seance.Time
                     );
             }

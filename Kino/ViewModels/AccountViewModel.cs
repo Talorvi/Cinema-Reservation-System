@@ -1,11 +1,13 @@
 ﻿using Kino.Models;
 using Kino.Utilities;
 using Kino.Views.Interfaces;
+using Renci.SshNet.Messages;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Kino.ViewModels
 {
@@ -26,7 +28,8 @@ namespace Kino.ViewModels
 
         private void SetNewPassword(string pass)
         {
-            Validators.UserValidator.UserUpdateValidation(Cache.User.Id,pass,Cache.User.RoleId);
+            if (Validators.UserValidator.UserUpdateValidation(Cache.User.Id, pass, Cache.User.RoleId))
+                MessageBox.Show("Pomyślnie zmieniono hasło.");
         }
 
         private bool CheckOldPassword(string pass)

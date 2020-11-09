@@ -35,7 +35,10 @@ namespace Kino.ViewModels
 
         private void MakeNew()
         {
-            Cache.Seance = new Models.Seance();
+            var seance = new Models.Seance();
+            seance.Hall = new Models.Hall();
+            seance.Movie = new Models.Movie();
+            Cache.Seance = seance;
         }
 
         private void LoadList()
