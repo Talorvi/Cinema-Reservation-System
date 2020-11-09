@@ -1,4 +1,5 @@
-﻿using Kino.Utilities;
+﻿using Kino.Models;
+using Kino.Utilities;
 using Kino.Views.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -31,7 +32,18 @@ namespace Kino.ViewModels
 
         private void LoadReservationList()
         {
-            Cache.Reservations = Validators.UserValidator.GetUserReservations(Cache.User.Id);
+            var res = Validators.UserValidator.GetUserReservations(Cache.User.Id);
+            var invalid = new List<Reservation>();
+            foreach (var x in res)
+            {
+                if(x.Time.AddMinutes(15) < DateTime.Now && !x.IsConfirmed)
+                {
+                    Validators.ReservationValidator.ReservationDeleteValidation(x.Id);
+                    invalid.Add(x);
+                }
+            }
+            res.RemoveAll(x => invalid.Contains(x));
+            Cache.Reservations = res;
         }
 
         private int GetSeatNumber()

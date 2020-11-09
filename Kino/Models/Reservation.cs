@@ -1,4 +1,5 @@
 ﻿using LinqToDB.Mapping;
+using System;
 
 namespace Kino.Models
 {
@@ -24,6 +25,9 @@ namespace Kino.Models
         
         [Column(Name = "is_confirmed"), NotNull]
         public bool IsConfirmed { get; set; }
+
+        [Column(Name = "time"), NotNull]
+        public DateTime Time { get; set; }
         
         public User User { get; set; }
         

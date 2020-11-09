@@ -67,7 +67,7 @@ namespace Kino.Validators
                 {
                     return false;
                 }
-                ReservationController.Add(userId.Value, seanceId.Value, seat.Value, isConfirmed);
+                ReservationController.Add(userId.Value, seanceId.Value, seat.Value, DateTime.Now, isConfirmed);
                 return true;
             }
             catch (Exception e)

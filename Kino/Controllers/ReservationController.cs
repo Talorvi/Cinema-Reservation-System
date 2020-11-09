@@ -68,7 +68,7 @@ namespace Kino.Controllers
             return reservations;
         }
         
-        public static void Add(int userId, int seanceId, int seat, bool isConfirmed = false)
+        public static void Add(int userId, int seanceId, int seat, DateTime time, bool isConfirmed = false)
         {
             using var db = new DbCinema();
             db.Reservations
@@ -76,6 +76,7 @@ namespace Kino.Controllers
                 .Value(reservation => reservation.SeanceId, seanceId)
                 .Value(reservation => reservation.Seat, seat)
                 .Value(reservation => reservation.IsConfirmed, isConfirmed)
+                .Value(reservation => reservation.Time, time)
                 .Insert();
         }
 
