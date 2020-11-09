@@ -30,6 +30,7 @@ namespace Kino.Utilities
         
         public async void Subscribe()
         {
+            _myChannel = null;
             _myChannel = await _pusher.SubscribeAsync($"{Cache.Seance.Id}");
             Cache.WsServer.Ping();
             _myChannel.Bind("ping", data =>
@@ -60,6 +61,8 @@ namespace Kino.Utilities
         {
             Cache.Queue = null;
             Cache.WsServer.Ping();
+            _myChannel.UnbindAll();
+            _pusher.UnbindAll();
             _myChannel.Unsubscribe();
         }
         public void Disconnect()
