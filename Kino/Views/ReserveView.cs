@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Kino.ViewModels;
+using Kino.Utilities;
+using System.Runtime.CompilerServices;
 
 namespace Kino.Views
 {
@@ -20,11 +22,10 @@ namespace Kino.Views
             viewModel = new ReserveViewModel(this);
             labelTitle.Text = GetMovieTitle();
             labelDate.Text = GetDate().ToString("MM/dd/yyyy HH:mm");
-            var locked = GetSeatsLocked();
-            foreach(var x in locked)
-            {
-                Controls["radioButton" + x].Enabled = false;
-            }
+        }
+        ~ReserveView()
+        {
+            Cache.WsClient.Unsubscribe();
         }
 
         private int index = -1;
@@ -33,6 +34,17 @@ namespace Kino.Views
         public Func<DateTime> GetDate { get; set; }
         public Func<int[]> GetSeatsLocked { get; set; }
         public Action<int[]> ReserveSeats { get; set; }
+        private delegate void UnlockDelegate();
+        private void UnlockFunction()
+        {
+            buttonReserve.Enabled = true;
+            var locked = GetSeatsLocked();
+            var unlocked = Enumerable.Range(1, 16).Except(locked);
+            foreach (var x in unlocked)
+            {
+                Controls["tableLayoutPanelSeats"].Controls[$"radioButton{x}"].Enabled = true;
+            }
+        }
 
         private void buttonReserve_Click(object sender, EventArgs e)
         {
@@ -46,13 +58,18 @@ namespace Kino.Views
 
         private void radioButton_CheckedChanged(object sender, EventArgs e)
         {
-            if(sender is RadioButton)
+            if (sender is RadioButton)
             {
-                if((sender as RadioButton).Checked == true)
+                if ((sender as RadioButton).Checked == true)
                 {
                     index = int.Parse((sender as RadioButton).Name.Trim().Last().ToString());
                 }
             }
         }
+        public void Unlock()
+        {
+            this.Invoke(new UnlockDelegate(this.UnlockFunction));
+        }
+        
     }
 }

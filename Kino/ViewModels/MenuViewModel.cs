@@ -18,6 +18,7 @@ namespace Kino.ViewModels
 
         private void Logout()
         {
+            Cache.WsClient.Disconnect();
             Cache.User = null;
         }
     }

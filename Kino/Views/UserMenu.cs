@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Kino.ViewModels;
+using Kino.Utilities;
 
 namespace Kino.Views
 {
@@ -23,6 +24,13 @@ namespace Kino.Views
         public Action Logout { get; set; }
         private void Change_Panel(AbstractChangingWindow window)
         {
+            foreach (var x in splitContainerUserMenu.Panel2.Controls)
+            {
+                if (x is ReserveView)
+                {
+                    Cache.WsClient.Unsubscribe();
+                }
+            }
             splitContainerUserMenu.Panel2.Controls.Clear();
             window.Change_Window += Change_Panel;
             window.Dock = DockStyle.Fill;

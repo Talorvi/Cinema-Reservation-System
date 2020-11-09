@@ -28,7 +28,6 @@ namespace Kino.ViewModels
                 Cache.WsClient.Connect();
                 
                 Cache.WsServer = new WebSocketServer();
-                Cache.WsServer.Test();
             }
 
             return isValid;
