@@ -62,7 +62,7 @@ namespace Kino.Views
             {
                 if ((sender as RadioButton).Checked == true)
                 {
-                    index = int.Parse((sender as RadioButton).Name.Trim().Last().ToString());
+                    index = int.Parse((sender as RadioButton).Name.Trim().Substring(11));
                 }
             }
         }
