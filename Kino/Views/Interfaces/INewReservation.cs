@@ -13,5 +13,6 @@ namespace Kino.Views.Interfaces
         public Func<DateTime> GetDate { get; set; }
         public Func<int[]> GetSeatsLocked { get; set; }
         public Action<int[]> ReserveSeats { get; set; }
+        public void Unlock();
     }
 }

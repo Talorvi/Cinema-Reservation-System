@@ -134,6 +134,7 @@
             this.radioButton16.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.radioButton16.AutoSize = true;
             this.radioButton16.CheckAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.radioButton16.Enabled = false;
             this.radioButton16.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.radioButton16.Location = new System.Drawing.Point(686, 355);
             this.radioButton16.Name = "radioButton16";
@@ -143,12 +144,14 @@
             this.radioButton16.Text = "16";
             this.radioButton16.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.radioButton16.UseVisualStyleBackColor = true;
+            this.radioButton16.CheckedChanged += new System.EventHandler(this.radioButton_CheckedChanged);
             // 
             // radioButton15
             // 
             this.radioButton15.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.radioButton15.AutoSize = true;
             this.radioButton15.CheckAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.radioButton15.Enabled = false;
             this.radioButton15.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.radioButton15.Location = new System.Drawing.Point(485, 355);
             this.radioButton15.Name = "radioButton15";
@@ -158,12 +161,14 @@
             this.radioButton15.Text = "15";
             this.radioButton15.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.radioButton15.UseVisualStyleBackColor = true;
+            this.radioButton15.CheckedChanged += new System.EventHandler(this.radioButton_CheckedChanged);
             // 
             // radioButton14
             // 
             this.radioButton14.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.radioButton14.AutoSize = true;
             this.radioButton14.CheckAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.radioButton14.Enabled = false;
             this.radioButton14.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.radioButton14.Location = new System.Drawing.Point(285, 355);
             this.radioButton14.Name = "radioButton14";
@@ -173,12 +178,14 @@
             this.radioButton14.Text = "14";
             this.radioButton14.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.radioButton14.UseVisualStyleBackColor = true;
+            this.radioButton14.CheckedChanged += new System.EventHandler(this.radioButton_CheckedChanged);
             // 
             // radioButton13
             // 
             this.radioButton13.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.radioButton13.AutoSize = true;
             this.radioButton13.CheckAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.radioButton13.Enabled = false;
             this.radioButton13.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.radioButton13.Location = new System.Drawing.Point(85, 355);
             this.radioButton13.Name = "radioButton13";
@@ -188,12 +195,14 @@
             this.radioButton13.Text = "13";
             this.radioButton13.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.radioButton13.UseVisualStyleBackColor = true;
+            this.radioButton13.CheckedChanged += new System.EventHandler(this.radioButton_CheckedChanged);
             // 
             // radioButton12
             // 
             this.radioButton12.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.radioButton12.AutoSize = true;
             this.radioButton12.CheckAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.radioButton12.Enabled = false;
             this.radioButton12.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.radioButton12.Location = new System.Drawing.Point(686, 248);
             this.radioButton12.Name = "radioButton12";
@@ -203,12 +212,14 @@
             this.radioButton12.Text = "12";
             this.radioButton12.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.radioButton12.UseVisualStyleBackColor = true;
+            this.radioButton12.CheckedChanged += new System.EventHandler(this.radioButton_CheckedChanged);
             // 
             // radioButton11
             // 
             this.radioButton11.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.radioButton11.AutoSize = true;
             this.radioButton11.CheckAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.radioButton11.Enabled = false;
             this.radioButton11.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.radioButton11.Location = new System.Drawing.Point(485, 248);
             this.radioButton11.Name = "radioButton11";
@@ -218,12 +229,14 @@
             this.radioButton11.Text = "11";
             this.radioButton11.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.radioButton11.UseVisualStyleBackColor = true;
+            this.radioButton11.CheckedChanged += new System.EventHandler(this.radioButton_CheckedChanged);
             // 
             // radioButton10
             // 
             this.radioButton10.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.radioButton10.AutoSize = true;
             this.radioButton10.CheckAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.radioButton10.Enabled = false;
             this.radioButton10.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.radioButton10.Location = new System.Drawing.Point(285, 248);
             this.radioButton10.Name = "radioButton10";
@@ -233,12 +246,14 @@
             this.radioButton10.Text = "10";
             this.radioButton10.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.radioButton10.UseVisualStyleBackColor = true;
+            this.radioButton10.CheckedChanged += new System.EventHandler(this.radioButton_CheckedChanged);
             // 
             // radioButton9
             // 
             this.radioButton9.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.radioButton9.AutoSize = true;
             this.radioButton9.CheckAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.radioButton9.Enabled = false;
             this.radioButton9.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.radioButton9.Location = new System.Drawing.Point(89, 248);
             this.radioButton9.Name = "radioButton9";
@@ -248,12 +263,14 @@
             this.radioButton9.Text = "9";
             this.radioButton9.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.radioButton9.UseVisualStyleBackColor = true;
+            this.radioButton9.CheckedChanged += new System.EventHandler(this.radioButton_CheckedChanged);
             // 
             // radioButton8
             // 
             this.radioButton8.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.radioButton8.AutoSize = true;
             this.radioButton8.CheckAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.radioButton8.Enabled = false;
             this.radioButton8.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.radioButton8.Location = new System.Drawing.Point(691, 142);
             this.radioButton8.Name = "radioButton8";
@@ -263,12 +280,14 @@
             this.radioButton8.Text = "8";
             this.radioButton8.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.radioButton8.UseVisualStyleBackColor = true;
+            this.radioButton8.CheckedChanged += new System.EventHandler(this.radioButton_CheckedChanged);
             // 
             // radioButton7
             // 
             this.radioButton7.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.radioButton7.AutoSize = true;
             this.radioButton7.CheckAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.radioButton7.Enabled = false;
             this.radioButton7.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.radioButton7.Location = new System.Drawing.Point(489, 142);
             this.radioButton7.Name = "radioButton7";
@@ -278,12 +297,14 @@
             this.radioButton7.Text = "7";
             this.radioButton7.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.radioButton7.UseVisualStyleBackColor = true;
+            this.radioButton7.CheckedChanged += new System.EventHandler(this.radioButton_CheckedChanged);
             // 
             // radioButton6
             // 
             this.radioButton6.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.radioButton6.AutoSize = true;
             this.radioButton6.CheckAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.radioButton6.Enabled = false;
             this.radioButton6.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.radioButton6.Location = new System.Drawing.Point(289, 142);
             this.radioButton6.Name = "radioButton6";
@@ -293,12 +314,14 @@
             this.radioButton6.Text = "6";
             this.radioButton6.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.radioButton6.UseVisualStyleBackColor = true;
+            this.radioButton6.CheckedChanged += new System.EventHandler(this.radioButton_CheckedChanged);
             // 
             // radioButton5
             // 
             this.radioButton5.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.radioButton5.AutoSize = true;
             this.radioButton5.CheckAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.radioButton5.Enabled = false;
             this.radioButton5.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.radioButton5.Location = new System.Drawing.Point(89, 142);
             this.radioButton5.Name = "radioButton5";
@@ -308,12 +331,14 @@
             this.radioButton5.Text = "5";
             this.radioButton5.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.radioButton5.UseVisualStyleBackColor = true;
+            this.radioButton5.CheckedChanged += new System.EventHandler(this.radioButton_CheckedChanged);
             // 
             // radioButton4
             // 
             this.radioButton4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.radioButton4.AutoSize = true;
             this.radioButton4.CheckAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.radioButton4.Enabled = false;
             this.radioButton4.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.radioButton4.Location = new System.Drawing.Point(691, 36);
             this.radioButton4.Name = "radioButton4";
@@ -323,12 +348,14 @@
             this.radioButton4.Text = "4";
             this.radioButton4.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.radioButton4.UseVisualStyleBackColor = true;
+            this.radioButton4.CheckedChanged += new System.EventHandler(this.radioButton_CheckedChanged);
             // 
             // radioButton3
             // 
             this.radioButton3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.radioButton3.AutoSize = true;
             this.radioButton3.CheckAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.radioButton3.Enabled = false;
             this.radioButton3.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.radioButton3.Location = new System.Drawing.Point(489, 36);
             this.radioButton3.Name = "radioButton3";
@@ -338,12 +365,14 @@
             this.radioButton3.Text = "3";
             this.radioButton3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.radioButton3.UseVisualStyleBackColor = true;
+            this.radioButton3.CheckedChanged += new System.EventHandler(this.radioButton_CheckedChanged);
             // 
             // radioButton2
             // 
             this.radioButton2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.radioButton2.AutoSize = true;
             this.radioButton2.CheckAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.radioButton2.Enabled = false;
             this.radioButton2.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.radioButton2.Location = new System.Drawing.Point(289, 36);
             this.radioButton2.Name = "radioButton2";
@@ -353,12 +382,14 @@
             this.radioButton2.Text = "2";
             this.radioButton2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.radioButton2.UseVisualStyleBackColor = true;
+            this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton_CheckedChanged);
             // 
             // radioButton1
             // 
             this.radioButton1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.radioButton1.AutoSize = true;
             this.radioButton1.CheckAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.radioButton1.Enabled = false;
             this.radioButton1.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.radioButton1.Location = new System.Drawing.Point(89, 36);
             this.radioButton1.Name = "radioButton1";
@@ -373,6 +404,7 @@
             // buttonReserve
             // 
             this.buttonReserve.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonReserve.Enabled = false;
             this.buttonReserve.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.buttonReserve.Location = new System.Drawing.Point(741, 105);
             this.buttonReserve.Name = "buttonReserve";
