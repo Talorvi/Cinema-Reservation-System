@@ -48,7 +48,7 @@ namespace Kino.Views
         private void buttonConfirm_Click(object sender, EventArgs e)
         {
             ConfirmReservationAtIndex(index);
-            listViewMyReservations.Items[index].SubItems[3].Text = "True";
+            listViewMyReservations.Items[index].SubItems[4].Text = "True";
         }
 
         private void listViewMyReservations_SelectedIndexChanged(object sender, EventArgs e)
@@ -56,7 +56,7 @@ namespace Kino.Views
             if (listViewMyReservations.SelectedIndices.Count > 0)
             {
                 index = listViewMyReservations.SelectedIndices[0];
-                if(listViewMyReservations.Items[index].SubItems[3].Text == "False")
+                if(listViewMyReservations.Items[index].SubItems[4].Text == "False")
                     buttonConfirm.Enabled = true;
             }
             else

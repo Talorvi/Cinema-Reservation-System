@@ -71,17 +71,24 @@ namespace Kino.ViewModels
 
         private string GetMovie()
         {
-            return Cache.Seance.Movie.Name;
+            if (Cache.Seance.Movie != null)
+                return Cache.Seance.Movie.Name;
+            return "";
         }
 
         private string GetHall()
         {
-            return Cache.Seance.Hall.Name;
+            if(Cache.Seance.Hall != null)
+                return Cache.Seance.Hall.Name;
+            return "";
         }
 
         private DateTime GetDate()
         {
-            return Cache.Seance.Time;
+            if(Cache.Seance.Time != DateTime.MinValue)
+                return Cache.Seance.Time;
+            Cache.Seance.Time = DateTime.Now;
+            return DateTime.Now;
         }
     }
 }

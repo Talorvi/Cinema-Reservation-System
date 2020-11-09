@@ -63,7 +63,7 @@ namespace Kino.Validators
         {
             try
             {
-                if (userId == null || seanceId == null || GetReservationByUserIdAndSeanceId(userId.Value, seanceId.Value).UserId != 0)
+                if (userId == null || seanceId == null || GetReservationBySeanceId(seanceId.Value).Where(x => x.Seat == seat).Any())
                 {
                     return false;
                 }
@@ -72,6 +72,7 @@ namespace Kino.Validators
             }
             catch (Exception e)
             {
+                Console.WriteLine(e.Message);
                 return false;
             }
         }
