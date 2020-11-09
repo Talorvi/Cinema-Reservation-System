@@ -24,9 +24,9 @@ namespace Kino.Tests
         [Test]
         public void AddNewHallTest()
         {
-            var hall = HallValidator.HallAddValidation("test hall");
+            var hall = HallValidator.HallAddValidation("test");
             Assert.True(hall);
-            var searchHall = HallValidator.GetHallByName("test hall");
+            var searchHall = HallValidator.GetHallByName("test");
             Assert.True(searchHall.GetType() == typeof(Hall));
             HallValidator.HallDeleteValidation(searchHall.Id);
         }
@@ -37,11 +37,11 @@ namespace Kino.Tests
         [Test]
         public void UpdateHallTest()
         {
-            var hall = HallValidator.HallAddValidation("test hall");
+            var hall = HallValidator.HallAddValidation("test");
             Assert.True(hall);
-            var searchHall = HallValidator.GetHallByName("test hall");
+            var searchHall = HallValidator.GetHallByName("test");
             Assert.True(searchHall.GetType() == typeof(Hall));
-            var updated = HallValidator.HallUpdateValidation(searchHall.Id, "updated hall");
+            var updated = HallValidator.HallUpdateValidation(searchHall.Id, "updated");
             Assert.True(updated);
             HallValidator.HallDeleteValidation(searchHall.Id);
         }
@@ -52,12 +52,12 @@ namespace Kino.Tests
         [Test]
         public void DeleteHallTest()
         {
-            var hall = HallValidator.HallAddValidation("test hall");
+            var hall = HallValidator.HallAddValidation("test");
             Assert.True(hall);
-            var searchHall = HallValidator.GetHallByName("test hall");
+            var searchHall = HallValidator.GetHallByName("test");
             Assert.True(searchHall.GetType() == typeof(Hall));
             HallValidator.HallDeleteValidation(searchHall.Id);
-            searchHall = HallValidator.GetHallByName("test hall");
+            searchHall = HallValidator.GetHallByName("test");
             Assert.Null(searchHall.Name);
         }
     }
