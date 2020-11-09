@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Kino.ViewModels
 {
@@ -19,7 +20,17 @@ namespace Kino.ViewModels
 
         private bool IsLoginValid(string user, string pass)
         {
-            return Validators.UserValidator.UserLoginValidation(user, pass);
+            var isValid = Validators.UserValidator.UserLoginValidation(user, pass);
+            
+            if (isValid)
+            {
+                Cache.WsClient = new WebSocketClient();
+                Cache.WsClient.Connect();
+                
+                Cache.WsServer = new WebSocketServer();
+            }
+
+            return isValid;
         }
         private bool IsWorker(string user)
         {

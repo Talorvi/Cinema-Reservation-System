@@ -27,7 +27,9 @@ namespace Kino.ViewModels
 
         private void MakeReservation(int id)
         {
-            Cache.Seance = Cache.Seances[id];
+            var _seance = Cache.Seances[id];
+            Cache.Seance = _seance;
+            Cache.WsClient.Subscribe();
         }
 
         private void LoadSeancesList()

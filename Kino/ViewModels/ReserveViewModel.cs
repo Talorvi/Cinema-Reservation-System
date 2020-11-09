@@ -17,6 +17,7 @@ namespace Kino.ViewModels
             view.GetMovieTitle += GetMovieTitle;
             view.GetSeatsLocked += GetSeatsLocket;
             view.ReserveSeats += ReserveSeats;
+            Cache.WsClient.Unlock += view.Unlock;
         }
 
         private void ReserveSeats(int[] obj)

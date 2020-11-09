@@ -20,5 +20,8 @@ namespace Kino.Utilities
         public static Movie Movie { get; set; }
         public static List<User> Workers { get; set; }
         public static User Worker { get; set; }
+        public static WebSocketClient WsClient { get; set; }
+        public static WebSocketServer WsServer { get; set; }
+        public static Queue Queue { get; set; }
     }
 }
