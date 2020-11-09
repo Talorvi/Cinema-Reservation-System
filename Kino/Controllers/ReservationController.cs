@@ -12,9 +12,17 @@ namespace Kino.Controllers
         {
             using var db = new DbCinema();
             var query = from reservation in db.Reservations
-                orderby reservation.Id descending
-                select reservation;
-            var reservations = query.ToList();
+                        join user in db.Users on reservation.UserId equals user.Id
+                        join seance in db.Seances on reservation.SeanceId equals seance.Id
+                        orderby reservation.Id descending
+                        select Reservation.Build(reservation,user,seance);
+
+            var reservations = query.ToList(); 
+            foreach(var res in reservations)
+            {
+                res.Seance = SeanceController.Get(res.SeanceId);
+                res.User = UserController.Get(res.UserId);
+            }
             return reservations;
         }
         
